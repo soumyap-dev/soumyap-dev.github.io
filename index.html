@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Soumya Ranjan Sarangi | Full-Stack Developer</title>
+    <!-- Favicon --><link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><defs><linearGradient id=%22g%22 x1=%220%25%22 y1=%220%25%22 x2=%22100%25%22 y2=%22100%25%22><stop offset=%220%25%22 stop-color=%22%234f46e5%22/><stop offset=%22100%25%22 stop-color=%22%2334d399%22/></linearGradient></defs><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22central%22 text-anchor=%22middle%22 font-size=%2280%22 font-weight=%22bold%22 fill=%22url(%23g)%22>S</text></svg>">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -69,7 +70,7 @@
             transform: translateY(0);
         }
 
-        /* NEW: Back to Top button styles */
+        /* Back to Top button styles */
         #back-to-top {
             position: fixed;
             bottom: 20px;
@@ -97,7 +98,7 @@
             visibility: visible;
         }
 
-        /* NEW: Enhanced social icon styles */
+        /* Enhanced social icon styles */
         .social-icon {
             transition: transform 0.3s ease, color 0.3s ease;
         }
@@ -106,7 +107,7 @@
             color: #a855f7; /* Purple glow */
         }
 
-        /* NEW: Hero section entrance animation */
+        /* Hero section entrance animation */
         .hero-element {
             opacity: 0;
             transform: translateY(20px);
@@ -118,11 +119,53 @@
                 transform: translateY(0);
             }
         }
+
+        /* --- NEW: High-Enhanced Skill Icon Styles --- */
+        .skill-icon {
+            color: #9ca3af; /* text-gray-400 */
+            transition: color 0.3s ease;
+            height: 32px; /* Set fixed height */
+            width: 32px; /* Set fixed width */
+        }
+        .skill-icon svg {
+            height: 100%;
+            width: 100%;
+        }
+
+        /* Brand color hovers */
+        .hover-color-js:hover { color: #F7DF1E; }
+        .hover-color-react:hover { color: #61DAFB; }
+        .hover-color-node:hover { color: #339933; }
+        .hover-color-express:hover { color: #ffffff; } /* Express is monochrome, hover to white */
+        .hover-color-python:hover { color: #3776AB; }
+        .hover-color-java:hover { color: #f89820; }
+        .hover-color-html:hover { color: #E34F26; }
+        .hover-color-css:hover { color: #1572B6; }
+        .hover-color-mongo:hover { color: #47A248; }
+        .hover-color-git:hover { color: #F05032; }
+        /* Accent color for custom icons */
+        .hover-color-api:hover { color: #a855f7; }
+        .hover-color-ml:hover { color: #a855f7; }
+        .hover-color-ai:hover { color: #a855f7; }
+        .hover-color-deploy:hover { color: #a855f7; }
+
+
     </style>
 </head>
 <body class="antialiased">
 
-    <!-- Header & Navigation --><header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass-card mx-2 md:mx-4 lg:mx-auto lg:max-w-7xl mt-2">
+    <!-- Global SVG Gradient Definitions (No change) --><svg width="0" height="0" style="position:absolute;z-index:-1;">
+        <defs>
+            <linearGradient id="grad-purple-green" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#a855f7" /> <!-- Purple --><stop offset="100%" stop-color="#34d399" /> <!-- Green --></linearGradient>
+            <linearGradient id="grad-green-purple" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#34d399" /> <!-- Green --><stop offset="100%" stop-color="#a855f7" /> <!-- Purple --></linearGradient>
+            <linearGradient id="grad-blue-purple" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#60a5fa" /> <!-- Blue --><stop offset="100%" stop-color="#a855f7" /> <!-- Purple --></linearGradient>
+        </defs>
+    </svg>
+
+    <!-- Header & Navigation (No change) --><header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass-card mx-2 md:mx-4 lg:mx-auto lg:max-w-7xl mt-2">
         <div class="container mx-auto px-4 py-3">
             <div class="flex justify-between items-center">
                 <a href="#" class="text-2xl font-bold gradient-text">SRS.</a>
@@ -130,29 +173,30 @@
                     <a href="#about" class="hover:text-purple-400 transition-colors duration-300">About</a>
                     <a href="#skills" class="hover:text-purple-400 transition-colors duration-300">Skills</a>
                     <a href="#projects" class="hover:text-purple-400 transition-colors duration-300">Projects</a>
-                    <!-- ADDED: Experience Nav Link --><a href="#experience" class="hover:text-purple-400 transition-colors duration-300">Experience</a>
+                    <a href="#experience" class="hover:text-purple-400 transition-colors duration-300">Experience</a>
                     <a href="#achievements" class="hover:text-purple-400 transition-colors duration-300">Achievements</a>
                     <a href="#contact" class="hover:text-purple-400 transition-colors duration-300">Contact</a>
-                    <!-- UPDATED: Download CV Button --><a href="./Soumya_Ranjan_Sarangi_Sde_CV.pdf" download class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-4 rounded-lg transition-transform duration-300 hover:scale-105">Download CV</a>
+                    <a href="./Soumya_Ranjan_Sarangi_Sde_CV.pdf" download class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-4 rounded-lg transition-transform duration-300 hover:scale-105">Download CV</a>
                 </nav>
                 <button id="mobile-menu-button" class="md:hidden text-2xl">
                     ☰
                 </button>
             </div>
         </div>
-        <!-- Mobile Menu --><div id="mobile-menu" class="hidden md:hidden px-4 pb-4">
+        <!-- Mobile Menu (No change) --><div id="mobile-menu" class="hidden md:hidden px-4 pb-4">
             <a href="#about" class="block py-2 text-center hover:bg-gray-700 rounded-lg">About</a>
             <a href="#skills" class="block py-2 text-center hover:bg-gray-700 rounded-lg">Skills</a>
             <a href="#projects" class="block py-2 text-center hover:bg-gray-700 rounded-lg">Projects</a>
-            <!-- ADDED: Experience Mobile Nav Link --><a href="#experience" class="block py-2 text-center hover:bg-gray-700 rounded-lg">Experience</a>
+            <a href="#experience" class="block py-2 text-center hover:bg-gray-700 rounded-lg">Experience</a>
             <a href="#achievements" class="block py-2 text-center hover:bg-gray-700 rounded-lg">Achievements</a>
             <a href="#contact" class="block py-2 text-center hover:bg-gray-700 rounded-lg">Contact</a>
-             <!-- UPDATED: Download CV Button for Mobile --><a href="./Soumya_Ranjan_Sarangi_Sde_CV.pdf" download class="block py-2 text-center bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-lg mt-2">Download CV</a>
+            <a href="./Soumya_Ranjan_Sarangi_Sde_CV.pdf" download class="block py-2 text-center bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-lg mt-2">Download CV</a>
         </div>
     </header>
 
     <main class="container mx-auto px-4 pt-24 md:pt-32">
-        <!-- Hero Section --><section id="home" class="min-h-screen flex items-center justify-center text-center -mt-20">
+        
+        <!-- Hero Section (No change) --><section id="home" class="min-h-screen flex items-center justify-center text-center -mt-20">
             <div class="max-w-4xl mx-auto">
                 <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-4 hero-element" style="animation-delay: 100ms;">
                     Soumya Ranjan Sarangi
@@ -170,7 +214,7 @@
             </div>
         </section>
 
-        <!-- About Section --><section id="about" class="py-20 scroll-reveal">
+        <!-- About Section (No change) --><section id="about" class="py-20 scroll-reveal">
             <h2 class="text-4xl font-bold text-center mb-12">About <span class="gradient-text">Me</span></h2>
             <div class="flex flex-col md:flex-row items-center justify-center gap-12">
                 <div class="md:w-2/3 text-center md:text-left">
@@ -178,13 +222,13 @@
                         I’m a passionate MCA graduate with a strong foundation in Full-Stack Web Development and AI/ML. My focus lies in building intelligent, scalable, and visually engaging applications. As a Google Student Ambassador and open-source contributor, I thrive in collaborative environments that challenge my creativity and technical expertise. I aim to grow as a Software Engineer who fuses AI innovation with real-world web solutions.
                     </p>
                     
-                    <!-- NEW: Professional Education Component --><div class="mt-12">
+                    <!-- Professional Education Component (No change) --><div class="mt-12">
                         <h3 class="text-2xl font-bold text-center mb-6 gradient-text">Education</h3>
                         <div class="flex flex-col md:flex-row justify-center gap-6">
                             <!-- MCA Card --><div class="glass-card p-6 flex-1 text-left">
                                 <div class="flex items-start gap-4">
                                     <div>
-                                        <!-- UPDATED: Premium Gradient Icon for MCA --><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="mt-1">
+                                        <!-- Premium Gradient Icon for MCA --><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="mt-1">
                                             <defs>
                                                 <linearGradient id="grad-purple" x1="0%" y1="0%" x2="100%" y2="100%">
                                                     <stop offset="0%" stop-color="#a855f7" />
@@ -198,14 +242,14 @@
                                     <div>
                                         <h4 class="font-bold text-lg text-gray-100">Master of Computer Applications</h4>
                                         <p class="text-gray-400">Trident Academy of Creative Technology, Bhubaneswar</p>
-                                        <!-- UPDATED: Changed from Expected to Graduated --><p class="text-sm text-gray-500 mt-1">Graduated 2025</p>
+                                        <p class="text-sm text-gray-500 mt-1">Graduated 2025</p>
                                     </div>
                                 </div>
                             </div>
                             <!-- B.Sc. Card --><div class="glass-card p-6 flex-1 text-left">
                                  <div class="flex items-start gap-4">
                                     <div>
-                                       <!-- UPDATED: Premium Gradient Icon for B.Sc. Chemistry --><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="mt-1">
+                                       <!-- Premium Gradient Icon for B.Sc. Chemistry --><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="mt-1">
                                             <defs>
                                                 <linearGradient id="grad-green" x1="0%" y1="0%" x2="100%" y2="100%">
                                                     <stop offset="0%" stop-color="#34d399" />
@@ -219,7 +263,7 @@
                                     </div>
                                     <div>
                                         <h4 class="font-bold text-lg text-gray-100">B.Sc. in Chemistry</h4>
-                                        <p class="text-gray-400">Panchayat Prahallad Degree College</p>
+                                        <p class="text-gray-400">Panchayat Prahallad Degree College, Nischintakoili</p>
                                         <p class="text-sm text-gray-500 mt-1">Graduated 2022</p>
                                     </div>
                                 </div>
@@ -236,13 +280,13 @@
                 <!-- Skill items will be injected here by JS --></div>
         </section>
 
-        <!-- Projects Section --><section id="projects" class="py-20 scroll-reveal">
+        <!-- Projects Section (No change) --><section id="projects" class="py-20 scroll-reveal">
             <h2 class="text-4xl font-bold text-center mb-12">My <span class="gradient-text">Projects</span></h2>
             <div id="projects-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Project cards will be injected here by JS --></div>
         </section>
 
-        <!-- NEW: Experience Section --><section id="experience" class="py-20 scroll-reveal">
+        <!-- Experience Section (No change) --><section id="experience" class="py-20 scroll-reveal">
             <h2 class="text-4xl font-bold text-center mb-12">Work <span class="gradient-text">Experience</span></h2>
             <div class="max-w-3xl mx-auto space-y-8">
                 <!-- Experience Item 1 --><div class="glass-card p-6">
@@ -259,33 +303,34 @@
                         <li>Delivered the assigned project well within the given timeframe, demonstrating efficiency and dedication.</li>
                     </ul>
                 </div>
-                <!-- You can add more experience cards here by copying the div above --></div>
+            </div>
         </section>
 
-        <!-- Achievements Section --><section id="achievements" class="py-20 scroll-reveal">
+        <!-- Achievements Section (No change) --><section id="achievements" class="py-20 scroll-reveal">
             <h2 class="text-4xl font-bold text-center mb-12">Achievements & <span class="gradient-text">Roles</span></h2>
             <div class="max-w-3xl mx-auto space-y-8">
                 <!-- Achievement items will be injected here by JS --></div>
         </section>
 
-        <!-- Contact Section --><section id="contact" class="py-20 text-center scroll-reveal">
+        <!-- Contact Section (No change) --><section id="contact" class="py-20 text-center scroll-reveal">
             <h2 class="text-4xl font-bold mb-4">Get In <span class="gradient-text">Touch</span></h2>
             <p class="text-gray-400 mb-8 max-w-xl mx-auto">I'm currently seeking new opportunities and would love to connect. Feel free to reach out via email or my social platforms.</p>
-            <!-- UPDATED: Email button with icon --><a href="mailto:sr.sarangi2001@gmail.com" class="inline-flex items-center gap-3 bg-green-500 text-white font-bold text-lg py-3 px-8 rounded-lg transition-transform duration-300 hover:scale-105 hover:bg-green-600 mb-8">
+            <a href="mailto:sr.sarangi2001@gmail.com" class="inline-flex items-center gap-3 bg-green-500 text-white font-bold text-lg py-3 px-8 rounded-lg transition-transform duration-300 hover:scale-105 hover:bg-green-600 mb-8">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><polyline points="3 7 12 13 21 7"></polyline></svg>
                 Say Hello!
             </a>
-            <!-- UPDATED: Social Icons with new classes --><div class="flex justify-center space-x-6 text-3xl">
-                <!-- NEW: Github (X) Icon --><a href="https://github.com/soumyap-dev" class="social-icon" target="_blank" rel="noopener noreferrer">
+            
+            <div class="flex justify-center space-x-6 text-3xl">
+                <a href="https://github.com/soumyap-dev" class="social-icon" target="_blank" rel="noopener noreferrer">
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
                 </a>
-                <!-- NEW: Linkedin (X) Icon --><a href="https://www.linkedin.com/in/sr-soumya26/" class="social-icon" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.linkedin.com/in/sr-soumya26/" class="social-icon" target="_blank" rel="noopener noreferrer">
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
                 </a>
-                <!-- NEW: Twitter (X) Icon --><a href="https://x.com/sr_soumya_12" class="social-icon" target="_blank" rel="noopener noreferrer">
+                <a href="https://x.com/sr_soumya_12" class="social-icon" target="_blank" rel="noopener noreferrer">
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
                 </a>
-                <!-- REVERTED: LeetCode Icon (Original Filled Style) --><a href="https://leetcode.com/u/U1Z2AS70JX/" class="social-icon" target="_blank" rel="noopener noreferrer">
+                <a href="https://leetcode.com/u/U1Z2AS70JX/" class="social-icon" target="_blank" rel="noopener noreferrer">
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M13.2 16.88a1.2 1.2 0 0 1-1.04 0l-2.08-.88-2.6 2.6a1.2 1.2 0 0 1-1.7 0 1.2 1.2 0 0 1 0-1.7l2.6-2.6-1.12-2.64a1.2 1.2 0 0 1 .36-1.36l5.08-3.8a1.2 1.2 0 0 1 1.36-.36l2.08.88 2.6-2.6a1.2 1.2 0 1 1 1.7 1.7l-2.6 2.6 1.12 2.64a1.2 1.2 0 0 1-.36 1.36l-5.08 3.8zM10.2 7.1L5.6 10.5l4.6 3.4 1.44-3.4-1.44-3.4zM12 14l4.6-3.4-4.6-3.4-1.44 3.4 1.44 3.4z"></path></svg>
                 </a>
             </div>
@@ -296,20 +341,30 @@
         <p class="text-gray-500">Designed & Built by Soumya Ranjan Sarangi © 2025</p>
     </footer>
 
-    <!-- NEW: Back to Top Button --><a id="back-to-top" href="#home" class="scroll-smooth">
+    <!-- Back to Top Button (No change) --><a id="back-to-top" href="#home" class="scroll-smooth">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
     </a>
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            // --- DATA ---
+            // --- DATA (UPDATED SKILLS ARRAY) ---
             const skills = [
-                { name: 'JavaScript' }, { name: 'React.js' }, { name: 'Node.js' }, { name: 'Express.js' },
-                { name: 'Python' }, { name: 'Java' }, { name: 'HTML5' }, { name: 'CSS3' },
-                { name: 'MongoDB' }, { name: 'Git' }, { name: 'REST APIs' }, { name: 'Machine Learning' },
-                { name: 'AI Tools' }, { name: 'Deployment' }
+                { name: 'JavaScript', hoverClass: 'hover-color-js', svg: `<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path d="M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-2.288-.78-.495-.105-.96-.075-1.394.09-.585.225-1.44.66-2.264 1.245l.21.36c.87-.51 1.634-.945 2.234-1.215.48-.21.884-.285 1.201-.21.57.105 1.006.33 1.32.51.72.39 1.155.84 1.29 1.275.105.345.045.72-.18 1.005-.21.285-.54.495-.915.645-.375.165-.81.24-1.29.225-.615-.03-1.23-.225-1.785-.51-.315-.165-.6-.3-.855-.39-.375-.135-.81-.195-1.26-.165-.48.015-.9.12-1.245.315-.36.195-.63.48-.81.855-.165.375-.24.795-.195 1.26.03.375.12.705.3 1.005.195.315.48.54.855.69.375.165.795.24 1.26.21.69-.03 1.334-.285 1.874-.66.57-.405 1.034-.84 1.304-1.215l-.21-.36c-.165.255-.405.51-.735.735-.45.315-.975.495-1.545.51-.51.03-.99-.06-1.41-.255-.405-.18-.735-.45-.975-.81-.225-.375-.33-.795-.3-1.26a1.92 1.92 0 0 1 .435-1.2c.24-.315.585-.555 1.005-.705.39-.15.825-.225 1.29-.21.54.015 1.05.18 1.515.48.33.18.63.36.9.51.48.27.99.435 1.515.495.51.075 1.005-.015 1.455-.285.435-.27.735-.645.885-1.095.165-.465.135-1.005-.105-1.485-.24-.48-.615-.885-1.095-1.215z"/></svg>` },
+                { name: 'React.js', hoverClass: 'hover-color-react', svg: `<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><circle cx="12" cy="12" r="2.05"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-13.5c-3.03 0-5.5 2.47-5.5 5.5s2.47 5.5 5.5 5.5 5.5-2.47 5.5-5.5-2.47-5.5-5.5-5.5zm0 9c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z"/></svg>` },
+                { name: 'Node.js', hoverClass: 'hover-color-node', svg: `<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path d="M11.33 1.26s-1.18 0-1.18 1.1v17.44s0 1.1 1.18 1.1h1.34s1.18 0 1.18-1.1V2.36s0-1.1-1.18-1.1h-1.34zM18.67 5.5s-1.18 0-1.18 1.1v9.6s0 1.1 1.18 1.1h1.34s1.18 0 1.18-1.1V6.6s0-1.1-1.18-1.1h-1.34zM4 9.76s-1.18 0-1.18 1.1v1.68s0 1.1 1.18 1.1H5.3s1.18 0 1.18-1.1v-1.68s0-1.1-1.18-1.1H4z"/></svg>` },
+                { name: 'Express.js', hoverClass: 'hover-color-express', svg: `<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path d="M24 17.61c0 .5-.2 1-.59 1.4-.4.4-.89.6-1.42.6h-5.9c-.58 0-1.07-.2-1.47-.6-.4-.4-.6-.9-.6-1.4v-3.23h3.8V16h-2.6v1.01h2.6v.6H15.2v-2.22h3.8v-1.6h-3.8V12h3.8v-.6h-3.8v-1.6h3.8V11h-2.6v1.01h2.6v.6H15.2V9.39h3.8V11h-3.8v.6h3.8v3.23h-3.8V16h3.8v.6h-3.8v1.01h3.19c.14 0 .27-.05.37-.15.1-.1.15-.22.15-.36v-.02h1.2zM.02 6.39C.02 5.9.22 5.4.61 5c.4-.4.89-.6 1.42-.6h5.9c.58 0 1.07.2 1.47.6.4.4.6.9.6 1.4v3.23H6.2V8h2.6V6.99H6.2V6.4h2.82c.14 0 .27.05.37.15.1.1.15.22.15.36v.02h1.2c0-.5-.2-1-.59-1.4-.4-.4-.89-.6-1.42-.6h-5.9c-.58 0-1.07.2-1.47.6-.4.4-.6.9-.6 1.4v3.23h3.8V11H1.22V9.39h3.8V11H1.22v.6h3.8v1.6H1.22V12h3.8v.6H1.22v1.6h3.8V16H1.22v-1.6h3.8V16h-2.6v-1.01h2.6v-.6H1.22v2.22h3.8v-1.6H1.22v.6h3.8v1.6H1.22V16h2.6v1.01H1.22v.6h3.19c.14 0 .27-.05.37-.15.1-.1.15-.22.15-.36v-.02h1.2c0 .5-.2 1-.59 1.4-.4.4-.89.6-1.42.6h-5.9c-.58 0-1.07-.2-1.47-.6-.4-.4-.6-.9-.6-1.4V6.39z"/></svg>` },
+                { name: 'Python', hoverClass: 'hover-color-python', svg: `<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path d="M12 24a12 12 0 1 1 0-24 12 12 0 0 1 0 24zm-2.3-3.05a.73.73 0 0 0 .73-.73V16.3c0-2.3 1.9-4.2 4.2-4.2h1.4c.4 0 .7-.3.7-.7s-.3-.7-.7-.7h-1.4a5.6 5.6 0 0 0-5.6 5.6v3.9c0 .4.3.7.7.7zm4.6-17.9a.73.73 0 0 0-.7.7v3.9c0 2.3-1.9 4.2-4.2 4.2h-1.4c-.4 0-.7.3-.7.7s.3.7.7.7h1.4a5.6 5.6 0 0 0 5.6-5.6V3.7a.7.7 0 0 0-.7-.7z"/></svg>` },
+                { name: 'Java', hoverClass: 'hover-color-java', svg: `<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path d="M12.015 15.06c-1.065.015-2.01-.225-2.82-.675-.3-.165-.6-.3-.6-.63 0-.315.165-.48.48-.6.315-.12.87-.24 1.62-.24.765 0 1.335.09 1.71.255.42.18.63.495.63.9a.93.93 0 0 1-.36.75c-.3.225-.705.345-1.26.42zm4.335 1.185c-1.2.795-2.805 1.185-4.785 1.185-1.785 0-3.315-.315-4.575-.945-.255-.135-.375-.3-.375-.51 0-.195.12-.345.36-.45.24-.105.78-.225 1.59-.225.855 0 1.515.12 1.98.36.465.255.69.6.69 1.05 0 .345-.12.585-.36.735-.24.15-.555.225-.945.225-.405 0-.78-.06-.975-.15-.33-.18-.495-.45-.495-.81 0-.33.15-.57.435-.72.285-.15.75-.225 1.38-.225 1.11 0 2.01.27 2.7.81.69.54 1.035 1.29 1.035 2.25 0 .78-.195 1.44-.585 1.995-.39.54-1.02.99-1.89 1.335-.87.345-1.995.525-3.375.525-1.53 0-2.895-.21-4.095-.63-.255-.09-.435-.255-.435-.495 0-.21.135-.375.405-.495.27-.12.795-.21 1.575-.21.78 0 1.365.105 1.755.315.39.21.585.51.585.9s-.165.66-.495.825c-.33.165-.795.255-1.395.255s-1.125-.105-1.575-.315c-.45-.21-.675-.525-.675-.945 0-.42.225-.75.675-.975.45-.225 1.11-.33 1.98-.33 1.02 0 1.86.21 2.52.63.66.42.99 1.02.99 1.8 0 .585-.135 1.08-.405 1.485-.27.405-.72.72-1.35.945s-1.425.345-2.385.345c-1.275 0-2.385-.24-3.33-.72-.18-.09-.285-.24-.285-.45 0-.18.12-.315.36-.405.24-.09.615-.15 1.125-.15.51 0 .93.075 1.26.225.33.15.495.39.495.72 0 .285-.135.48-.405.585-.27.105-.645.165-1.125.165-.495 0-.915-.075-1.26-.225s-.51-.375-.51-.675c0-.285.15-.51.45-.675s.765-.255 1.395-.255c.675 0 1.26.075 1.755.225.495.15.84.345 1.035.585.195.24.285.54.285.9 0 .525-.255.945-.765 1.26s-1.215.465-2.115.465c-.855 0-1.635-.12-2.34-.36-.705-.24-1.215-.54-1.53-.9-.315-.36-.48-.75-.48-1.17 0-.42.15-.81.45-1.17.3-.36.75-.645 1.35-.855.6-.21 1.335-.315 2.205-.315 1.02 0 1.905.18 2.655.54s1.125.825 1.125 1.395zm.03-5.01c0 .765-.165 1.425-.495 1.98-.33.555-.84 1.02-1.53 1.395-.69.375-1.56.555-2.61.555-.915 0-1.74-.15-2.475-.45-.735-.3-1.29-.675-1.665-1.125s-.555-.975-.555-1.575c0-.75.195-1.395.585-1.935.39-.54.99-1.005 1.8-1.395.81-.39 1.8-.585 2.97-.585 1.14 0 2.085.225 2.835.675.75.45 1.125 1.08 1.125 1.89zM7.5 0v3h9V0zm0 4.5v3h9v-3z"/></svg>` },
+                { name: 'HTML5', hoverClass: 'hover-color-html', svg: `<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.23-2.622H5.456l.66 7.35h8.974l-.337 3.75-2.732.768-2.732-.768-.18-2.023H6.14l.33 4.171L12 19.351l5.379-1.443.744-8.157H8.531z"/></svg>` },
+                { name: 'CSS3', hoverClass: 'hover-color-css', svg: `<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm17.09 4.413L5.41 4.41l.213 2.622 10.125-.002-.237 2.716H5.62l.214 2.622h8.974l-.338 3.747-2.732.768-2.732-.768-.18-2.023H6.14l.33 4.17L12 19.35l5.379-1.442.744-8.158H8.53z"/></svg>` },
+                { name: 'MongoDB', hoverClass: 'hover-color-mongo', svg: `<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path d="M16.179 11.23C14.13 9.424 12.08 8.647 12 8.647c-.08 0-2.13.777-4.179 2.583C5.55 13.33 3.65 16.33 3.65 16.33c.093.22.27.42.495.55.225.13.488.19.75.13h14.21c.264.06.526-.002.75-.13.226-.13.403-.33.496-.55 0 0-1.9-3-4.17-5.1zM12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 18.268c-1.433 0-2.75-.43-3.867-1.152.015-.02.03-.04.044-.06.09-.12.18-.24.27-.37.81-1.12 1.9-1.9 2.89-2.2.37-.11.76-.17 1.15-.17.39 0 .78.06 1.15.17.99.3 2.08 1.08 2.89 2.2.09.13.18.25.27.37.015.02.03.04.045.06-1.117.722-2.434 1.152-3.868 1.152z"/></svg>` },
+                { name: 'Git', hoverClass: 'hover-color-git', svg: `<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path d="M23.955 11.69c-.048-1.512-.396-2.976-1.056-4.344-.66-1.38-1.572-2.58-2.724-3.6-1.14-1.008-2.484-1.776-3.996-2.28-1.512-.516-3.12-.756-4.788-.708C9.795.01 8.205.286 6.723.834 5.241 1.39 3.945 2.22 2.865 3.3c-1.08 1.08-1.92 2.376-2.46 3.84-.552 1.476-.828 3.066-.816 4.74.012 1.668.3 3.252.852 4.728.552 1.476 1.378 2.784 2.454 3.876 1.08 1.08 2.376 1.92 3.852 2.472 1.476.54 3.066.816 4.74.804 1.67-.01 3.25-.3 4.72-.85 1.48-.55 2.78-1.38 3.88-2.45 1.09-1.08 1.93-2.38 2.48-3.85.54-1.48.81-3.07.8-4.74zm-5.016 6.096c-.312.312-.672.564-1.08.756-.408.192-.852.324-1.332.396-.48.072-.984.084-1.512.036-.528-.048-1.056-.156-1.56-.324-.516-.168-.996-.408-1.428-.708-.444-.312-.828-.684-1.14-1.116-.312-.432-.552-.912-.708-1.428-.168-.504-.264-1.032-.312-1.572-.048-.528-.036-1.056.036-1.572.072-.516.204-.996.396-1.44.192-.444.432-.828.744-1.14.312-.312.672-.564 1.08-.756s.852-.324 1.332-.396c.48-.072.984-.084 1.512-.036.528.048 1.056.156 1.56.324.516.168.996.408 1.428.708.444.312.828.684 1.14 1.116.312.432.552.912.708 1.428.168.504.264 1.032.312 1.572.048.528.036 1.056-.036 1.572-.072.516-.204.996-.396 1.44-.192.444-.432.828-.744 1.14zM18.15 9.48c.444.444.708.996.792 1.632.084.624.012 1.26-.228 1.836-.24.576-.648 1.068-1.164 1.416-.528.348-1.128.54-1.788.54-.66 0-1.26-.192-1.788-.54-.516-.348-.924-.84-1.164-1.416-.24-.576-.312-1.212-.228-1.836.084-.636.348-1.188.792-1.632.444-.444.996-.708 1.632-.792.624-.084 1.26-.012 1.836.228.576.24 1.068.648 1.416 1.164.348.528.54 1.128.54 1.788zm-6.264-3.552c-.12.084-.228.18-.324.3-.108.12-.192.252-.252.396-.06.144-.096.3-.096.468v6.432c0 .168.036.324.096.468.06.144.144.276.252.396.096.12.204.216.324.3.12.084.252.144.396.18.144.036.3.048.468.024.168-.012.324-.06.468-.132.144-.072.276-.168.396-.288.108-.12.192-.252.252-.396.06-.144.096-.3.096-.468v-3.324l3.168 3.168c.12.12.252.216.396.288.144.072.3.12.468.132.168.012.324-.012.468-.06.144-.048.276-.12.396-.216.12-.096.216-.204.3-.324.084-.12.144-.252.18-.396.036-.144.048-.3.024-.468-.012-.168-.06-.324-.132-.468-.072-.144-.168-.276-.288-.396l-3.168-3.168h3.324c.168 0 .324-.036.468-.096s.276-.144.396-.252c.12-.108.216-.228.288-.372.072-.144.12-.3.132-.468.012-.168-.012-.324-.06-.468-.048-.144-.12-.276-.216-.396-.096-.12-.204-.216-.324-.3-.12-.084-.252-.144-.396-.18-.144-.036-.3-.048-.468-.024-.168.012-.324.06-.468.132-.144.072-.276.168-.396.288-.108.12-.192.252-.252.396-.06.144-.096.3-.096.468h-6.432c-.168 0-.324.036-.468.096-.144.06-.276.144-.396.252z"/></svg>` },
+                { name: 'REST APIs', hoverClass: 'hover-color-api', svg: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M12 18v-6"/><path d="M9 15l3-3 3 3"/></svg>` },
+                { name: 'Machine Learning', hoverClass: 'hover-color-ml', svg: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m15 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/><circle cx="12" cy="12" r="3"/><path d="M12 8V5m0 14v-3m4-4h3m-14 0h3m9.1-2.1L19 7m-14 10 2.1-2.1m0-5.8L7 7m10 10-2.1-2.1"/></svg>` },
+                { name: 'AI Tools', hoverClass: 'hover-color-ai', svg: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect x="8" y="4" width="8" height="4"/><path d="M12 20v-4h4"/><rect x="8" y="16" width="8" height="4"/><path d="M4 12H2"/><path d="M10 12H8"/><path d="M16 12h-2"/><path d="M22 12h-2"/></svg>` },
+                { name: 'Deployment', hoverClass: 'hover-color-deploy', svg: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 16.1A5 5 0 0 1 5.9 20M2 12.05A9 9 0 0 1 9.95 20M2 8V6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-6"/><path d="M20 12.05A9 9 0 0 0 12.05 4"/><path d="M12 4h.01"/></svg>` }
             ];
-
+            
             const projects = [
                 {
                     title: 'React Vite To-Do App',
@@ -349,12 +404,18 @@
                 }
             ];
             
-            // --- DYNAMIC CONTENT INJECTION ---
+            // --- DYNAMIC CONTENT INJECTION (UPDATED) ---
             const skillsContainer = document.querySelector('#skills .grid');
             skills.forEach(skill => {
                 const skillEl = document.createElement('div');
                 skillEl.className = 'glass-card p-4 flex flex-col items-center justify-center text-center';
-                skillEl.innerHTML = `<p class="font-semibold mt-2">${skill.name}</p>`;
+                // Apply the hover class and use the new SVG
+                skillEl.innerHTML = `
+                    <div class="skill-icon ${skill.hoverClass}">
+                        ${skill.svg}
+                    </div>
+                    <p class="font-semibold mt-2">${skill.name}</p>
+                `;
                 skillsContainer.appendChild(skillEl);
             });
 
@@ -365,16 +426,24 @@
                 
                 let tagsHtml = project.tags.map(tag => `<span class="bg-gray-700 text-xs font-semibold mr-2 mb-2 px-2.5 py-0.5 rounded-full">${tag}</span>`).join('');
                 
-                let linksHtml = `<a href="${project.githubUrl}" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-purple-400 transition-colors duration-300">GitHub</a>`;
+                let linksHtml = `
+                    <a href="${project.githubUrl}" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-purple-400 transition-colors duration-300" title="View on GitHub">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    </a>
+                `;
                 if(project.liveUrl) {
-                    linksHtml += `<a href="${project.liveUrl}" target="_blank" rel="noopener noreferrer" class="ml-4 text-gray-400 hover:text-purple-400 transition-colors duration-300">Live Demo</a>`;
+                    linksHtml += `
+                        <a href="${project.liveUrl}" target="_blank" rel="noopener noreferrer" class="ml-4 text-gray-400 hover:text-purple-400 transition-colors duration-300" title="View Live Demo">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                        </a>
+                    `;
                 }
                 
                 projectCard.innerHTML = `
                     <h3 class="text-xl font-bold mb-2 text-gray-100">${project.title}</h3>
                     <p class="text-gray-400 flex-grow mb-4">${project.description}</p>
                     <div class="flex flex-wrap mb-4">${tagsHtml}</div>
-                    <div class="mt-auto pt-4 border-t border-gray-700">${linksHtml}</div>
+                    <div class="mt-auto pt-4 border-t border-gray-700 flex items-center gap-4">${linksHtml}</div>
                 `;
                 projectsGrid.appendChild(projectCard);
             });
@@ -390,7 +459,7 @@
                 achievementsContainer.appendChild(achEl);
             });
 
-            // --- INTERACTIVITY ---
+            // --- INTERACTIVITY (No change) ---
             // Mobile Menu Toggle
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
@@ -401,7 +470,7 @@
                 link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
             });
 
-            // Typing Effect (no changes)
+            // Typing Effect
             const typingElement = document.getElementById('typing-effect');
             const roles = ["Full-Stack Developer", "AI & ML Enthusiast", "Open Source Contributor"];
             let roleIndex = 0, charIndex = 0, isDeleting = false;
@@ -422,14 +491,14 @@
             }
             type();
 
-            // Header opacity on scroll (no changes)
+            // Header opacity on scroll
             const header = document.getElementById('header');
             window.addEventListener('scroll', () => {
                 header.classList.toggle('bg-opacity-80', window.scrollY > 50);
                 header.classList.toggle('backdrop-blur-xl', window.scrollY > 50);
             });
             
-            // Scroll Reveal Animation (no changes)
+            // Scroll Reveal Animation
             const revealElements = document.querySelectorAll('.scroll-reveal');
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
@@ -441,7 +510,7 @@
             }, { threshold: 0.1 });
             revealElements.forEach(el => observer.observe(el));
             
-            // NEW: Back to Top Button Logic
+            // Back to Top Button Logic
             const backToTopButton = document.getElementById('back-to-top');
             window.addEventListener('scroll', () => {
                 if (window.scrollY > 300) {
@@ -454,5 +523,4 @@
     </script>
 </body>
 </html>
-
 
