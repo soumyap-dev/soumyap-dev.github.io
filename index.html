@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soumya Ranjan Sarangi | Full-Stack Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styles to complement Tailwind CSS */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d1117; /* A deep, dark background */
+            color: #c9d1d9; /* GitHub-like off-white for text */
+        }
+
+        /* Gradient text effect */
+        .gradient-text {
+            background: linear-gradient(to right, #4f46e5, #a855f7, #34d399);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradient-flow 5s linear infinite;
+        }
+
+        @keyframes gradient-flow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Blinking cursor for the typing effect */
+        .typing-cursor {
+            display: inline-block;
+            width: 3px;
+            height: 1.8rem;
+            background-color: #34d399; /* Neon green accent */
+            animation: blink 0.7s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        /* Custom glassmorphism effect for cards */
+        .glass-card {
+            background: rgba(22, 27, 34, 0.6); /* Semi-transparent dark background */
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 0.75rem; /* 12px */
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        .glass-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(168, 85, 247, 0.5); /* Subtle purple border on hover */
+        }
+        
+        /* Animation for sections fading in on scroll */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .scroll-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* NEW: Back to Top button styles */
+        #back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #4f46e5;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+            z-index: 100;
+        }
+        #back-to-top:hover {
+            transform: scale(1.1);
+            background-color: #6366f1;
+        }
+        #back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* NEW: Enhanced social icon styles */
+        .social-icon {
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+        .social-icon:hover {
+            transform: scale(1.2) translateY(-3px);
+            color: #a855f7; /* Purple glow */
+        }
+
+        /* NEW: Hero section entrance animation */
+        .hero-element {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slide-up 0.8s forwards;
+        }
+        @keyframes slide-up {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header & Navigation --><header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass-card mx-2 md:mx-4 lg:mx-auto lg:max-w-7xl mt-2">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-2xl font-bold gradient-text">SRS.</a>
+                <nav class="hidden md:flex space-x-6 items-center">
+                    <a href="#about" class="hover:text-purple-400 transition-colors duration-300">About</a>
+                    <a href="#skills" class="hover:text-purple-400 transition-colors duration-300">Skills</a>
+                    <a href="#projects" class="hover:text-purple-400 transition-colors duration-300">Projects</a>
+                    <!-- ADDED: Experience Nav Link --><a href="#experience" class="hover:text-purple-400 transition-colors duration-300">Experience</a>
+                    <a href="#achievements" class="hover:text-purple-400 transition-colors duration-300">Achievements</a>
+                    <a href="#contact" class="hover:text-purple-400 transition-colors duration-300">Contact</a>
+                    <!-- UPDATED: Download CV Button --><a href="./Soumya_Ranjan_Sarangi_Sde_CV.pdf" download class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-4 rounded-lg transition-transform duration-300 hover:scale-105">Download CV</a>
+                </nav>
+                <button id="mobile-menu-button" class="md:hidden text-2xl">
+                    ☰
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu --><div id="mobile-menu" class="hidden md:hidden px-4 pb-4">
+            <a href="#about" class="block py-2 text-center hover:bg-gray-700 rounded-lg">About</a>
+            <a href="#skills" class="block py-2 text-center hover:bg-gray-700 rounded-lg">Skills</a>
+            <a href="#projects" class="block py-2 text-center hover:bg-gray-700 rounded-lg">Projects</a>
+            <!-- ADDED: Experience Mobile Nav Link --><a href="#experience" class="block py-2 text-center hover:bg-gray-700 rounded-lg">Experience</a>
+            <a href="#achievements" class="block py-2 text-center hover:bg-gray-700 rounded-lg">Achievements</a>
+            <a href="#contact" class="block py-2 text-center hover:bg-gray-700 rounded-lg">Contact</a>
+             <!-- UPDATED: Download CV Button for Mobile --><a href="./Soumya_Ranjan_Sarangi_Sde_CV.pdf" download class="block py-2 text-center bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-lg mt-2">Download CV</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 pt-24 md:pt-32">
+        <!-- Hero Section --><section id="home" class="min-h-screen flex items-center justify-center text-center -mt-20">
+            <div class="max-w-4xl mx-auto">
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-4 hero-element" style="animation-delay: 100ms;">
+                    Soumya Ranjan Sarangi
+                </h1>
+                <h2 class="text-2xl md:text-3xl font-semibold mb-6 hero-element" style="animation-delay: 200ms;">
+                    <span id="typing-effect" class="gradient-text"></span><span class="typing-cursor"></span>
+                </h2>
+                <p class="max-w-2xl mx-auto text-lg text-gray-400 mb-8 hero-element" style="animation-delay: 300ms;">
+                    An MCA graduate transforming ideas into intelligent, scalable, and visually engaging web applications.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4 hero-element" style="animation-delay: 400ms;">
+                    <a href="#projects" class="bg-indigo-600 text-white font-bold py-3 px-6 rounded-lg transition-transform duration-300 hover:scale-105 hover:bg-indigo-700">View My Work</a>
+                    <a href="#contact" class="bg-gray-700 text-white font-bold py-3 px-6 rounded-lg transition-transform duration-300 hover:scale-105 hover:bg-gray-600">Get In Touch</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section --><section id="about" class="py-20 scroll-reveal">
+            <h2 class="text-4xl font-bold text-center mb-12">About <span class="gradient-text">Me</span></h2>
+            <div class="flex flex-col md:flex-row items-center justify-center gap-12">
+                <div class="md:w-2/3 text-center md:text-left">
+                    <p class="text-lg text-gray-300 leading-relaxed">
+                        I’m a passionate MCA graduate with a strong foundation in Full-Stack Web Development and AI/ML. My focus lies in building intelligent, scalable, and visually engaging applications. As a Google Student Ambassador and open-source contributor, I thrive in collaborative environments that challenge my creativity and technical expertise. I aim to grow as a Software Engineer who fuses AI innovation with real-world web solutions.
+                    </p>
+                    
+                    <!-- NEW: Professional Education Component --><div class="mt-12">
+                        <h3 class="text-2xl font-bold text-center mb-6 gradient-text">Education</h3>
+                        <div class="flex flex-col md:flex-row justify-center gap-6">
+                            <!-- MCA Card --><div class="glass-card p-6 flex-1 text-left">
+                                <div class="flex items-start gap-4">
+                                    <div>
+                                        <!-- UPDATED: Premium Gradient Icon for MCA --><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="mt-1">
+                                            <defs>
+                                                <linearGradient id="grad-purple" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                    <stop offset="0%" stop-color="#a855f7" />
+                                                    <stop offset="100%" stop-color="#4f46e5" />
+                                                </linearGradient>
+                                            </defs>
+                                            <path stroke="url(#grad-purple)" d="M22 10v6M2 10.66A10 10 0 0 1 12 2a10 10 0 0 1 10 8.66"/>
+                                            <path stroke="url(#grad-purple)" d="M2 16a6 6 0 0 0 10 5.19A6 6 0 0 0 22 16"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-lg text-gray-100">Master of Computer Applications</h4>
+                                        <p class="text-gray-400">Trident Academy of Creative Technology, Bhubaneswar</p>
+                                        <!-- UPDATED: Changed from Expected to Graduated --><p class="text-sm text-gray-500 mt-1">Graduated 2025</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- B.Sc. Card --><div class="glass-card p-6 flex-1 text-left">
+                                 <div class="flex items-start gap-4">
+                                    <div>
+                                       <!-- UPDATED: Premium Gradient Icon for B.Sc. Chemistry --><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="mt-1">
+                                            <defs>
+                                                <linearGradient id="grad-green" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                    <stop offset="0%" stop-color="#34d399" />
+                                                    <stop offset="100%" stop-color="#4f46e5" />
+                                                </linearGradient>
+                                            </defs>
+                                            <path stroke="url(#grad-green)" d="M5 21h14"/>
+                                            <path stroke="url(#grad-green)" d="M6 21l2-14h8l2 14"/>
+                                            <path stroke="url(#grad-green)" d="M6 14h12"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-lg text-gray-100">B.Sc. in Chemistry</h4>
+                                        <p class="text-gray-400">Panchayat Prahallad Degree College</p>
+                                        <p class="text-sm text-gray-500 mt-1">Graduated 2022</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section --><section id="skills" class="py-20 scroll-reveal">
+            <h2 class="text-4xl font-bold text-center mb-12">Technical <span class="gradient-text">Skills</span></h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-5xl mx-auto">
+                <!-- Skill items will be injected here by JS --></div>
+        </section>
+
+        <!-- Projects Section --><section id="projects" class="py-20 scroll-reveal">
+            <h2 class="text-4xl font-bold text-center mb-12">My <span class="gradient-text">Projects</span></h2>
+            <div id="projects-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project cards will be injected here by JS --></div>
+        </section>
+
+        <!-- NEW: Experience Section --><section id="experience" class="py-20 scroll-reveal">
+            <h2 class="text-4xl font-bold text-center mb-12">Work <span class="gradient-text">Experience</span></h2>
+            <div class="max-w-3xl mx-auto space-y-8">
+                <!-- Experience Item 1 --><div class="glass-card p-6">
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-2">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-100">Project Intern</h3>
+                            <p class="text-purple-400 font-semibold">Seeree Services Pvt. Ltd.</p>
+                        </div>
+                        <p class="text-gray-500 mt-2 sm:mt-0">Feb 2025 - Apr 2025</p>
+                    </div>
+                    <ul class="mt-4 list-disc list-inside text-gray-400 space-y-2">
+                        <li>Successfully developed a complete "Job Portal" project using Java and the Spring Boot framework.</li>
+                        <li>Responsible for designing and implementing the application's core features under the guidance of a project manager.</li>
+                        <li>Delivered the assigned project well within the given timeframe, demonstrating efficiency and dedication.</li>
+                    </ul>
+                </div>
+                <!-- You can add more experience cards here by copying the div above --></div>
+        </section>
+
+        <!-- Achievements Section --><section id="achievements" class="py-20 scroll-reveal">
+            <h2 class="text-4xl font-bold text-center mb-12">Achievements & <span class="gradient-text">Roles</span></h2>
+            <div class="max-w-3xl mx-auto space-y-8">
+                <!-- Achievement items will be injected here by JS --></div>
+        </section>
+
+        <!-- Contact Section --><section id="contact" class="py-20 text-center scroll-reveal">
+            <h2 class="text-4xl font-bold mb-4">Get In <span class="gradient-text">Touch</span></h2>
+            <p class="text-gray-400 mb-8 max-w-xl mx-auto">I'm currently seeking new opportunities and would love to connect. Feel free to reach out via email or my social platforms.</p>
+            <!-- UPDATED: Email button with icon --><a href="mailto:sr.sarangi2001@gmail.com" class="inline-flex items-center gap-3 bg-green-500 text-white font-bold text-lg py-3 px-8 rounded-lg transition-transform duration-300 hover:scale-105 hover:bg-green-600 mb-8">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><polyline points="3 7 12 13 21 7"></polyline></svg>
+                Say Hello!
+            </a>
+            <!-- UPDATED: Social Icons with new classes --><div class="flex justify-center space-x-6 text-3xl">
+                <!-- NEW: Github (X) Icon --><a href="https://github.com/soumyap-dev" class="social-icon" target="_blank" rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                </a>
+                <!-- NEW: Linkedin (X) Icon --><a href="https://www.linkedin.com/in/sr-soumya26/" class="social-icon" target="_blank" rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                </a>
+                <!-- NEW: Twitter (X) Icon --><a href="https://x.com/sr_soumya_12" class="social-icon" target="_blank" rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+                </a>
+                <!-- REVERTED: LeetCode Icon (Original Filled Style) --><a href="https://leetcode.com/u/U1Z2AS70JX/" class="social-icon" target="_blank" rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M13.2 16.88a1.2 1.2 0 0 1-1.04 0l-2.08-.88-2.6 2.6a1.2 1.2 0 0 1-1.7 0 1.2 1.2 0 0 1 0-1.7l2.6-2.6-1.12-2.64a1.2 1.2 0 0 1 .36-1.36l5.08-3.8a1.2 1.2 0 0 1 1.36-.36l2.08.88 2.6-2.6a1.2 1.2 0 1 1 1.7 1.7l-2.6 2.6 1.12 2.64a1.2 1.2 0 0 1-.36 1.36l-5.08 3.8zM10.2 7.1L5.6 10.5l4.6 3.4 1.44-3.4-1.44-3.4zM12 14l4.6-3.4-4.6-3.4-1.44 3.4 1.44 3.4z"></path></svg>
+                </a>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="text-center py-6 border-t border-gray-800">
+        <p class="text-gray-500">Designed & Built by Soumya Ranjan Sarangi © 2025</p>
+    </footer>
+
+    <!-- NEW: Back to Top Button --><a id="back-to-top" href="#home" class="scroll-smooth">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+    </a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // --- DATA ---
+            const skills = [
+                { name: 'JavaScript' }, { name: 'React.js' }, { name: 'Node.js' }, { name: 'Express.js' },
+                { name: 'Python' }, { name: 'Java' }, { name: 'HTML5' }, { name: 'CSS3' },
+                { name: 'MongoDB' }, { name: 'Git' }, { name: 'REST APIs' }, { name: 'Machine Learning' },
+                { name: 'AI Tools' }, { name: 'Deployment' }
+            ];
+
+            const projects = [
+                {
+                    title: 'React Vite To-Do App',
+                    description: 'A fully responsive task management web app with CRUD operations, React Hooks, and Local Storage for persistence.',
+                    tags: ['React.js', 'Vite', 'CSS3', 'Local Storage'],
+                    liveUrl: '#',
+                    githubUrl: '#'
+                },
+                {
+                    title: 'AI Chat Automation Bot',
+                    description: 'A prototype built using Python and the OpenAI API for real-time natural language query response and task automation.',
+                    tags: ['Python', 'OpenAI API', 'AI/ML'],
+                    liveUrl: null,
+                    githubUrl: '#'
+                },
+                {
+                    title: 'College Management System',
+                    description: 'A database-driven Java application with MySQL integration to efficiently handle student data, records, and administrative tasks.',
+                    tags: ['Java', 'MySQL', 'Swing UI'],
+                    liveUrl: null,
+                    githubUrl: '#'
+                }
+            ];
+            
+            const achievements = [
+                {
+                    title: 'Google Student Ambassador (Gemini AI Explorer)',
+                    description: 'Selected for a prestigious program to explore and promote Google\'s latest AI technologies on campus and within the developer community.'
+                },
+                {
+                    title: 'Contributor, GirlScript Summer of Code 2025',
+                    description: 'Actively contributed to open-source projects, collaborating with a global community of developers to improve software and learn new skills.'
+                },
+                {
+                    title: 'Certified AI & ML Learner',
+                    description: 'Completed multiple certifications and hands-on workshops, building a strong portfolio of projects in artificial intelligence and machine learning.'
+                }
+            ];
+            
+            // --- DYNAMIC CONTENT INJECTION ---
+            const skillsContainer = document.querySelector('#skills .grid');
+            skills.forEach(skill => {
+                const skillEl = document.createElement('div');
+                skillEl.className = 'glass-card p-4 flex flex-col items-center justify-center text-center';
+                skillEl.innerHTML = `<p class="font-semibold mt-2">${skill.name}</p>`;
+                skillsContainer.appendChild(skillEl);
+            });
+
+            const projectsGrid = document.getElementById('projects-grid');
+            projects.forEach(project => {
+                const projectCard = document.createElement('div');
+                projectCard.className = 'glass-card p-6 flex flex-col group';
+                
+                let tagsHtml = project.tags.map(tag => `<span class="bg-gray-700 text-xs font-semibold mr-2 mb-2 px-2.5 py-0.5 rounded-full">${tag}</span>`).join('');
+                
+                let linksHtml = `<a href="${project.githubUrl}" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-purple-400 transition-colors duration-300">GitHub</a>`;
+                if(project.liveUrl) {
+                    linksHtml += `<a href="${project.liveUrl}" target="_blank" rel="noopener noreferrer" class="ml-4 text-gray-400 hover:text-purple-400 transition-colors duration-300">Live Demo</a>`;
+                }
+                
+                projectCard.innerHTML = `
+                    <h3 class="text-xl font-bold mb-2 text-gray-100">${project.title}</h3>
+                    <p class="text-gray-400 flex-grow mb-4">${project.description}</p>
+                    <div class="flex flex-wrap mb-4">${tagsHtml}</div>
+                    <div class="mt-auto pt-4 border-t border-gray-700">${linksHtml}</div>
+                `;
+                projectsGrid.appendChild(projectCard);
+            });
+            
+             const achievementsContainer = document.querySelector('#achievements .space-y-8');
+             achievements.forEach(ach => {
+                const achEl = document.createElement('div');
+                achEl.className = 'glass-card p-6';
+                achEl.innerHTML = `
+                    <h3 class="text-xl font-bold mb-2 text-gray-100">${ach.title}</h3>
+                    <p class="text-gray-400">${ach.description}</p>
+                `;
+                achievementsContainer.appendChild(achEl);
+            });
+
+            // --- INTERACTIVITY ---
+            // Mobile Menu Toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            document.querySelectorAll('#mobile-menu a').forEach(link => {
+                link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+            });
+
+            // Typing Effect (no changes)
+            const typingElement = document.getElementById('typing-effect');
+            const roles = ["Full-Stack Developer", "AI & ML Enthusiast", "Open Source Contributor"];
+            let roleIndex = 0, charIndex = 0, isDeleting = false;
+            function type() {
+                const currentRole = roles[roleIndex];
+                if (isDeleting) {
+                    typingElement.textContent = currentRole.substring(0, charIndex-- - 1);
+                } else {
+                    typingElement.textContent = currentRole.substring(0, charIndex++ + 1);
+                }
+                if (!isDeleting && charIndex === currentRole.length) {
+                    setTimeout(() => isDeleting = true, 2000);
+                } else if (isDeleting && charIndex === 0) {
+                    isDeleting = false;
+                    roleIndex = (roleIndex + 1) % roles.length;
+                }
+                setTimeout(type, isDeleting ? 75 : 150);
+            }
+            type();
+
+            // Header opacity on scroll (no changes)
+            const header = document.getElementById('header');
+            window.addEventListener('scroll', () => {
+                header.classList.toggle('bg-opacity-80', window.scrollY > 50);
+                header.classList.toggle('backdrop-blur-xl', window.scrollY > 50);
+            });
+            
+            // Scroll Reveal Animation (no changes)
+            const revealElements = document.querySelectorAll('.scroll-reveal');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            revealElements.forEach(el => observer.observe(el));
+            
+            // NEW: Back to Top Button Logic
+            const backToTopButton = document.getElementById('back-to-top');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    backToTopButton.classList.add('show');
+                } else {
+                    backToTopButton.classList.remove('show');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
+
